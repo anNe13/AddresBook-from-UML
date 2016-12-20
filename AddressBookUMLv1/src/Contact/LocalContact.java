@@ -1,12 +1,20 @@
 package Contact;
 
+import sun.misc.UUDecoder;
+
 import java.util.UUID;
 
 public class LocalContact extends ContactDetails implements Contact{
-// test
+
+
+
     private UUID id;
+   /* public void setId(UUID id) {
+        this.id = id;
+    }*/
 
     public String getId() {
+
         return String.valueOf(id);
     }
 
@@ -21,5 +29,4 @@ public class LocalContact extends ContactDetails implements Contact{
     public String getEmailAddress() {
         return email;
     }
-
 }
