@@ -1,5 +1,5 @@
 package Contact;
 
 public interface Contact {
-//test4
+//test5
 }
