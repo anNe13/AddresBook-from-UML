@@ -15,6 +15,12 @@ public class CatalogueClient {
     private PrintWriter writer;
     private BufferedReader reader;
 
+    CatalogueClient(String host, int port){
+        this.host = host;
+        this.port = port;
+    }
+
+
 
     public void connect() {
         try {
