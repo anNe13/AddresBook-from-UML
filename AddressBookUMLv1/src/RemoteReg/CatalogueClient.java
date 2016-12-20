@@ -8,8 +8,8 @@ import java.net.Socket;
 
 public class CatalogueClient {
 
-    private String host = "localhost";
-    private int port = 61616;
+    private String host ;
+    private int port ;
 
     private Socket socket;
     private PrintWriter writer;
