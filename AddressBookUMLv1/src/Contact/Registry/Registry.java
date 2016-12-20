@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Registry  extends LocalContact {
     ArrayList<LocalContact> contacts =new ArrayList<LocalContact>();
     public void addContact (String firstName, String lastName, String email){
-
+//push
     }
     public ArrayListList<Contact> getContacts () {
        return fsd;
