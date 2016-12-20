@@ -1,7 +1,5 @@
 package Contact;
 
-import sun.misc.UUDecoder;
-
 import java.util.UUID;
 
 public class LocalContact extends ContactDetails implements Contact{
@@ -9,7 +7,6 @@ public class LocalContact extends ContactDetails implements Contact{
     private UUID id;
 
     public String getId() {
-
         return String.valueOf(id);
     }
 
