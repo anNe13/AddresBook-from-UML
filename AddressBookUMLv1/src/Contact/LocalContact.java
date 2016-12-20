@@ -20,8 +20,10 @@ public class LocalContact extends ContactDetails implements Contact{
     public String getLastName() {
         return lastName;
     }
+    public String getEmailAddres(){
 
     public String getEmailAddress() {
         return email;
     }
+
 }
