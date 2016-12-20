@@ -6,7 +6,12 @@ import java.util.UUID;
 
 public class LocalContact extends ContactDetails implements Contact{
 
+
+
     private UUID id;
+   /* public void setId(UUID id) {
+        this.id = id;
+    }*/
 
     public String getId() {
 
