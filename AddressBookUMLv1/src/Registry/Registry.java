@@ -1,13 +1,19 @@
 package Registry;
 
 
+import Contact.Contact;
 import Contact.LocalContact;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 public class Registry  extends LocalContact {
-    //ArrayList<LocalContact> contacts =new ArrayList<LocalContact>();
-    public void addContact (String firstName, String lastName, String email){
+
+    private List<Contact> contacts = new ArrayList<Contact>();
+
+    public void addContact (String firstName, String lastName, String email ){
+        contacts.add (firstName, lastName, email);
 
 
 //push

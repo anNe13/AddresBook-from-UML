@@ -9,7 +9,9 @@ public class UniqueIdGenerator {
 
 
             public  void  idGenrator (){
-               new LocalContact().setId(UUID.randomUUID());
+               LocalContact lc = new LocalContact();
+                lc.getId()
+                id= new LocalContact().setId(UUID.randomUUID());
 
                 }
             }
