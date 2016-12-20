@@ -1,5 +1,6 @@
 package Contact;
 
+import Registry.UniqueIdGenerator;
 import sun.misc.UUDecoder;
 
 import java.util.UUID;
@@ -34,6 +35,7 @@ public class LocalContact extends ContactDetails implements Contact{
         this.firstName= firstName;
         this.lastName= lastName;
         this.email= email;
+        this.id = new UniqueIdGenerator().idGenrator();
 
    }
 }
