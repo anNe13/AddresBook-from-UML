@@ -22,4 +22,9 @@ public class RemoteRegistry extends RemoteContact {
         }
         return foundList;//foundList kan vara null
     }
+
+    private void add(String id, String firtName, String lastName, String email) {
+        RemoteContact rContact = new RemoteContact(id, firtName, lastName, email);
+        remoteContacts.add(rContact);
+    }
 }
