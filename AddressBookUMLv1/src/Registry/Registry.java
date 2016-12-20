@@ -43,7 +43,7 @@ public class Registry  extends LocalContact {
         }
         return tempList;
     }
-    public void load (contacts){
+    public void load (ArrayList<Contact>contacts){
 
     }
 }
