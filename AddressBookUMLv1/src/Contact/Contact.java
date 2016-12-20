@@ -1,5 +1,12 @@
 package Contact;
 
 public interface Contact {
-//test5
+
+
+
+        String getId();
+        String getFirstName();
+        String getLastName();
+        String getEmailAddress();
+
 }
