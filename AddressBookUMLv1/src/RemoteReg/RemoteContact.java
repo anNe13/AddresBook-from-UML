@@ -3,7 +3,15 @@ package RemoteReg;
 import Contact.Contact;
 import Contact.ContactDetails;
 
-public class RemoteContact extends ContactDetails implements Contact {
+class RemoteContact extends ContactDetails implements Contact {
+
+   // public RemoteContact(){}
+    public RemoteContact(String id, String firstName, String lastName, String email) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
 
     private String id;
 
