@@ -5,7 +5,7 @@ import Contact.ContactDetails;
 
 class RemoteContact extends ContactDetails implements Contact {
 
-   // public RemoteContact(){}
+    public RemoteContact(){}
     public RemoteContact(String id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
