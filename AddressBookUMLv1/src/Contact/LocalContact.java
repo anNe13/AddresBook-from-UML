@@ -35,7 +35,7 @@ public class LocalContact extends ContactDetails implements Contact{
         this.firstName= firstName;
         this.lastName= lastName;
         this.email= email;
-        this.id = new UniqueIdGenerator().idGenrator();
+
 
    }
 }

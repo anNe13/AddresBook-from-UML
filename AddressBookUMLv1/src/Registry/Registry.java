@@ -13,7 +13,9 @@ public class Registry  extends LocalContact {
     private List<Contact> contacts = new ArrayList<Contact>();
 
     public void addContact (String firstName, String lastName, String email ){
-        contacts.add (firstName, lastName, email);
+        LocalContact contact= new LocalContact(firstName, lastName, email);
+        contact.setId(new UniqueIdGenerator().idGenrator());
+        contacts.add (contact);
 
 
 //push
