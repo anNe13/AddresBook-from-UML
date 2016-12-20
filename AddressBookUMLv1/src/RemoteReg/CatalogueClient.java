@@ -8,18 +8,17 @@ import java.net.Socket;
 
 public class CatalogueClient {
 
-    private String host ;
-    private int port ;
+    private String host;
+    private int port;
 
     private Socket socket;
     private PrintWriter writer;
     private BufferedReader reader;
 
-    CatalogueClient(String host, int port){
+    CatalogueClient(String host, int port) {
         this.host = host;
         this.port = port;
     }
-
 
 
     public void connect() {
@@ -43,13 +42,13 @@ public class CatalogueClient {
         }
     }
 
-    public String waitForResponse(){
+    public String waitForResponse() {
 
         String fileContentStr = "";
         try {
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            for (String line = reader.readLine(); line!=null; reader.readLine()){
+            for (String line = reader.readLine(); line != null; reader.readLine()) {
                 String record = "";
                 StringBuilder stringBuilder = new StringBuilder();
 
@@ -66,6 +65,18 @@ public class CatalogueClient {
             e.printStackTrace();
         }
         return fileContentStr;
+    }
+
+    public void disconnect(String exit){
+        try {
+            writer = new PrintWriter(socket.getOutputStream());
+            writer.println(exit);
+            writer.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Kunde inte disconnecta..");
+        }
     }
 }
 
