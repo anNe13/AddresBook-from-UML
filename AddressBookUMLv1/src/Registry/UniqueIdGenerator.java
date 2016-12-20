@@ -1,4 +1,4 @@
-package Contact.Registry;
+package Registry;
 
 
 import Contact.LocalContact;
