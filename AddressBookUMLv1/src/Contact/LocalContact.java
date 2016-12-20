@@ -6,7 +6,7 @@ public class LocalContact implements Contact{
     private UUID id;
 
     public String getID(){
-
+    return id;
     }
     public String getFirstName(){
 
@@ -15,7 +15,7 @@ public class LocalContact implements Contact{
 
     }
     public String getEmailAddres(){
-        
+
     }
 
 }
