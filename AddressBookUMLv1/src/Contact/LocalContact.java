@@ -3,7 +3,7 @@ package Contact;
 import java.util.UUID;
 
 public class LocalContact extends ContactDetails implements Contact{
-
+// test
     private UUID id;
 
     public String getId() {
