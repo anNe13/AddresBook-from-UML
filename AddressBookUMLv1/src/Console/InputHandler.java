@@ -1,4 +1,4 @@
-package Command;
+package Console;
 
 public interface InputHandler {
 }
