@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Console implements ConsolePrinter {
 
+
     @Override
     public void print(String string) {
         System.out.println(string);
@@ -20,6 +21,7 @@ public class Console implements ConsolePrinter {
         public CommandLine userInput() {
             CommandLine cl = new CommandLine();
             Scanner scanner = new Scanner(System.in);
+
             while (scanner.hasNextLine()) {
                 cl = cl.parse(scanner.nextLine());
             }

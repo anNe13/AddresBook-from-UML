@@ -16,7 +16,7 @@ public class CommandInterpreter {
 
         switch (command){
             case "add":
-                return new AddContactCommand( commandLine.command, )
+                return new AddContactCommand( commandLine.command, commandLine. )
         }
     }
 }
