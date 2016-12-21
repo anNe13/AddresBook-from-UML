@@ -1,8 +1,9 @@
 package Command;
 
 public interface Command {
+
     void getName();
     void getDescriptin();
-    void execute();
+    void execute()throws InvalidCommandException;
 
 }
