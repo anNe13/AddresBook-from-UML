@@ -4,6 +4,6 @@ public interface Command {
 
     //void getName();
     //void getDescription();
-    void execute()throws InvalidCommandParameterException;
+    void execute() throws InvalidCommandParameterException;
 
 }

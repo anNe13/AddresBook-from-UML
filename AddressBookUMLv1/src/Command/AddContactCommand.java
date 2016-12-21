@@ -18,13 +18,24 @@ public class AddContactCommand implements Command {
     }
 
 
-    void validate(){
+    boolean validate() {
+        boolean isValid=true;
+        if (parameters.size() != 3) {
+            isValid = false;
+            throw new InvalidCommandParameterException("fel antal parameter");
+        }
+        return isValid;
+        }
 
-    }
 
 
-    @Override
+
+
     public void execute() throws InvalidCommandParameterException {
-    registry.addContact(parameters.get(0),parameters.get(1),parameters.get(2));
+            if(validate()){
+                registry.addContact(parameters.get(0),parameters.get(1),parameters.get(2));
+            }
+        }
+
     }
-}
+

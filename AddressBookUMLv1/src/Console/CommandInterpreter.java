@@ -15,7 +15,8 @@ public class CommandInterpreter {
         String[] commandList = {"add", "list", "delete", "help", "quit", "search"};
 
         switch (command){
-            case commandList[1]
+            case "add":
+                return new AddContactCommand( commandLine.command, )
         }
     }
 }
