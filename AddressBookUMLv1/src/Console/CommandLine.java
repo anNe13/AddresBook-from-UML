@@ -1,7 +1,18 @@
 package Console;
 
-/**
- * Created by nicol on 2016-12-21.
- */
+import java.util.List;
+
 public class CommandLine {
+
+    private String command;
+    private List<String> parameters;
+
+    public CommandLine parse(String text) { //Nikolaj påpekar outofband exception
+        String[] temp = text.split(" ");
+        command = temp[0];
+        for (int i = 1; i < temp.length; i++){
+            parameters.add(temp[i]);
+        }
+        return this;
+    }
 }
