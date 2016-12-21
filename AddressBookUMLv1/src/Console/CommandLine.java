@@ -5,7 +5,7 @@ import java.util.List;
 public class CommandLine {
 
     protected String command;
-    private List<String> parameters;
+    protected List<String> parameters;
 
     public CommandLine parse(String text) { //Nikolaj påpekar outofband exception
         String[] temp = text.split(" ");

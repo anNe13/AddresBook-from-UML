@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class Registry  extends LocalContact {
 
-    private List<Contact> contacts = new ArrayList<Contact>();
+    private ArrayList<Contact> contacts = new ArrayList<Contact>();
 
     public void addContact (String firstName, String lastName, String email ){
         LocalContact contact= new LocalContact(firstName, lastName, email);
@@ -20,7 +20,7 @@ public class Registry  extends LocalContact {
 
 //push
     }
-    public List<Contact> getContacts () {
+    public ArrayList<Contact> getContacts () {
        return contacts;
     }
     public void deleteContact (String id){

@@ -6,14 +6,18 @@ import Contact.*;
 
 public class RemoteRegistry extends RemoteContact {
 
-    private List<Contact> remoteContacts = new ArrayList<Contact>();
+    private ArrayList<Contact> remoteContacts = new ArrayList<Contact>();
 
-    private List<Contact> getContacts() {
+    private ArrayList<Contact> getContacts() {
         return remoteContacts;
     }
 
-    private List<Contact> search(String term) {
-        List<Contact> foundList = new ArrayList<Contact>();
+    public ArrayList<Contact> getRemoteContacts() {
+        return remoteContacts;
+    }
+
+    private ArrayList<Contact> search(String term) {
+        ArrayList<Contact> foundList = new ArrayList<Contact>();
         for (Contact c : remoteContacts) {
 
             if (c.getFirstName().toLowerCase().startsWith(term.toLowerCase()) || c.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
