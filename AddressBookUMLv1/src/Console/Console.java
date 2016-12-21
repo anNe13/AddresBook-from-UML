@@ -12,16 +12,20 @@ public class Console implements ConsolePrinter {
     }
 
     public void registerInputHandler(InputHandler handler) {
-        InputHandler handler1 = new CommandLineInterface();
+        handler.handle(userInput());
 
-        Scanner scanner = new Scanner(System.in);
-        CommandLine cl = new CommandLine();
-
-        while (scanner.hasNextLine()){
-            cl = cl.parse(scanner.nextLine());
-
-        }
 
     }
+
+        public CommandLine userInput() {
+            CommandLine cl = new CommandLine();
+            Scanner scanner = new Scanner(System.in);
+            while (scanner.hasNextLine()) {
+                cl = cl.parse(scanner.nextLine());
+            }
+            return cl;
+        }
+
+
 
 }
