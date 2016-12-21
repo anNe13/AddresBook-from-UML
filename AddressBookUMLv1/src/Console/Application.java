@@ -1,12 +1,13 @@
 package Console;
 
 public class Application {
+    private CommandLine commandLine;
+    private CommandLineInterface commandLineInterface;
     void start(){
-        CommandLine cl = new CommandLine();
+        commandLine = new CommandLine();
+        commandLineInterface = new CommandLineInterface();
 
-
-        CommandLineInterface cli = new CommandLineInterface();
-        cli.handle(cl);
+        commandLineInterface.handle(commandLine);
     }
     void quit(){
         System.exit(0);

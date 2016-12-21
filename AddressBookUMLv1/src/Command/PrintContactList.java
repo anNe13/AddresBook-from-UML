@@ -6,7 +6,7 @@ import Contact.Contact;
 import java.util.ArrayList;
 
 public class PrintContactList {
-    Console console = new Console();
+    private Console console = new Console();
 
     public void printer(ArrayList<Contact> ContactsToPrint) {
         for (Contact c : ContactsToPrint) {

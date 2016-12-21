@@ -9,12 +9,16 @@ import Registry.Registry;
 import java.util.List;
 
 public class CommandInterpreter {
+    private Console console;
+    private Registry registry;
+    private String command;
+
 
     public Command interpret(CommandLine commandLine)throws InvalidCommandException {
-        Console console = new Console();
-        Registry registry = new Registry();
+         console = new Console();
+        registry = new Registry();
 
-        String command = commandLine.command.toLowerCase();
+        command = commandLine.command.toLowerCase();
         String[] commandList = {"add", "list", "delete", "help", "quit", "search"};
 
         switch (command){
