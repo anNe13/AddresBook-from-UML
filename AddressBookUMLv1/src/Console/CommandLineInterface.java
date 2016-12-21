@@ -7,6 +7,7 @@ public class CommandLineInterface implements InputHandler {
         CommandInterpreter commandInterpreter = new CommandInterpreter();
         Command command = commandInterpreter.interpret(commandLine);
 command.execute();
+        //test
     }
 }
 
