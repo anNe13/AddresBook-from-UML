@@ -7,7 +7,7 @@ import RemoteReg.RemoteRegistry;
 
 import java.util.ArrayList;
 
-public class List implements Command {
+public class ListCommand implements Command {
     Registry reg = new Registry();
     RemoteRegistry Rreg = new RemoteRegistry();
     PrintContactList pcl = new PrintContactList();
