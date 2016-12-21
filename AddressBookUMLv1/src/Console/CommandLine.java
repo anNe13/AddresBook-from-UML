@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CommandLine {
 
-    private String command;
+    protected String command;
     private List<String> parameters;
 
     public CommandLine parse(String text) { //Nikolaj påpekar outofband exception

@@ -3,7 +3,7 @@ package Command;
 public interface Command {
 
     void getName();
-    void getDescriptin();
-    void execute()throws InvalidCommandException;
+    void getDescription();
+    void execute()throws InvalidCommandParameterException;
 
 }
