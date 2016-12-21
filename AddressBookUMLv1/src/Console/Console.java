@@ -1,5 +1,7 @@
 package Console;
 
+import Console.CommandLine;
+import java.util.Scanner;
 
 public class Console implements ConsolePrinter {
 
@@ -9,7 +11,17 @@ public class Console implements ConsolePrinter {
 
     }
 
-    public void registerInputHandler(InputHandler hadler) {
-        InputHandler handler = new CommandLineInterface();
+    public void registerInputHandler(InputHandler handler) {
+        InputHandler handler1 = new CommandLineInterface();
+
+        Scanner scanner = new Scanner(System.in);
+        CommandLine cl = new CommandLine();
+
+        while (scanner.hasNextLine()){
+            cl = cl.parse(scanner.nextLine());
+
+        }
+
     }
+
 }
