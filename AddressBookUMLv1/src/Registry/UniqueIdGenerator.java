@@ -1,8 +1,5 @@
 package Registry;
 
-
-import Contact.LocalContact;
-
 import java.util.UUID;
 
 public class UniqueIdGenerator {

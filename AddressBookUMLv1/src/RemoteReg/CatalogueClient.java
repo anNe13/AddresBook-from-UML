@@ -52,7 +52,7 @@ public class CatalogueClient {
                 String record = "";
                 StringBuilder stringBuilder = new StringBuilder();
 
-                while ((record = reader.readLine()) != null) {
+                while ((record = reader.readLine()) != null) {//Nikolay tycker det ska stå !=""
                     stringBuilder.append(record + "\n");
                 }
                 fileContentStr = stringBuilder.toString();

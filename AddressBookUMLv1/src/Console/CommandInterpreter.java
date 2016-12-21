@@ -12,28 +12,10 @@ public class CommandInterpreter {
 
     public Command interpret(CommandLine commandLine)throws InvalidCommandException {
         String command = commandLine.command.toLowerCase();
-        String[]commandList = {"add","list","delete","help","quit","search"};
-        Command commandInterface = new Command() {
+        String[] commandList = {"add", "list", "delete", "help", "quit", "search"};
 
-
-            @Override
-            public void execute() throws InvalidCommandParameterException {
-
-            }
-        };
-
-        for (String commands: commandList) {
-
-            switch(command){
-                case "add":
-
-                    return AddContactCommand(ConsolePrinter printer , Registry registry, List<> parameters);
-
-            }
-
+        switch (command){
+            case commandList[1]
         }
-
-
-
     }
 }
