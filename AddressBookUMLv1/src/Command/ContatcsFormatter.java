@@ -15,4 +15,10 @@ public class ContatcsFormatter {
             console.print(c.getId() + " " + c.getFirstName() + " " + c.getLastName() + " " + c.getEmailAddress());
         }
     }
+    public String format(Contact contact){
+        String contactDetail;
+        contactDetail = contact.getId().toString() + contact.getFirstName().toString() + contact.getLastName().toString() + contact.getEmailAddress().toString();
+
+            return contactDetail;
+    }
 }
