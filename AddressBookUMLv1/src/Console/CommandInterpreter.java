@@ -30,8 +30,7 @@ public class CommandInterpreter {
             case "delete":
                 return new DeleteContactCommand(console, registry, commandLine.getParameters());
             case "search":
-                //return new SearchCommand();
-                break;
+                return new SearchCommand(console,registry,remoteRegistry,command);
             case "help":
                 //return new HelpCommand();
             case "quit":
