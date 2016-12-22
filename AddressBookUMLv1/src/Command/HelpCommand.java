@@ -1,14 +1,24 @@
 package Command;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HelpCommand {
 
     private HelpMeny helpMeny;
     private Commands commands;
 
-    public String format(Commands commands){
+    public String format(){
         helpMeny = new HelpMeny();
-        helpMeny.getCommands().toString().toLowerCase();
-        return "";
+
+        List<Commands> tempList = new ArrayList<>();
+        String temp = "";
+
+        tempList = helpMeny.getCommands();
+        for (Commands commands: tempList ){
+            temp = tempList.toString().toLowerCase();
+        }
+        return temp;
     }
 
 }
