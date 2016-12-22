@@ -2,8 +2,6 @@ package Command;
 
 import Console.Console;
 import Contact.Contact;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class PrintContactList {

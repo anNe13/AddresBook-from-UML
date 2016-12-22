@@ -1,12 +1,8 @@
 package Command;
 
-import Command.Command;
 import Contact.Contact;
 import Registry.Registry;
 import RemoteReg.RemoteRegistry;
-import Command.InvalidCommandParameterException;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListCommand implements Command {

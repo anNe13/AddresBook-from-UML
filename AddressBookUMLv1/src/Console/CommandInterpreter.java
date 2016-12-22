@@ -1,8 +1,6 @@
 package Console;
 
 import Command.Command;
-import Command.InvalidCommandException;
-import Command.AddContactCommand;
 import Registry.Registry;
 
 public class CommandInterpreter {
