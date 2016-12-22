@@ -3,31 +3,31 @@ package RemoteReg;
 import Contact.Contact;
 import Contact.ContactDetails;
 
-class RemoteContact extends ContactDetails implements Contact {
-
-    public RemoteContact(){}
-    public RemoteContact(String id, String firstName, String lastName, String email) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
+public class RemoteContact extends ContactDetails implements Contact {
 
     private String id;
+
+
+    public RemoteContact(String id, String firstName, String lastName, String email) {
+
+        firstName = this.getFirstName();
+        lastName = this.getLastName();
+        email = this.getEmailAddress();
+    }
 
     public String getId() {
         return id;
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.getFirstName();
     }
 
     public String getLastName() {
-        return lastName;
+        return this.getLastName();
     }
 
     public String getEmailAddress() {
-        return email;
+        return this.getEmailAddress();
     }
 }

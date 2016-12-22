@@ -1,20 +1,17 @@
 package RemoteReg;
 
-import Contact.Contact;
-
-import java.util.List;
-
 public class RemoteCatalogueFactory {
 
     private int defaultPort;
+    private  AtomicRemoteCatalogueProxy atomicRemoteCatalogueProxy;
 
     RemoteCatalogueFactory(int port){
         this.defaultPort = port;
     }
 
     public RemoteCatalogueProxy create(String host){
-       AtomicRemoteCatalogueProxy atomicremotecatalogueproxy = new AtomicRemoteCatalogueProxy(host,defaultPort);
-       return atomicremotecatalogueproxy;
+       atomicRemoteCatalogueProxy = new AtomicRemoteCatalogueProxy(host,defaultPort);
+       return atomicRemoteCatalogueProxy;
     }
 
 
