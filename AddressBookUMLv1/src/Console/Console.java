@@ -14,11 +14,8 @@ public class Console implements ConsolePrinter {
         System.out.println(string);
 
     }
-
     public void registerInputHandler(InputHandler handler) {
         handler.handle(userInput());
-
-
     }
 
     public CommandLine userInput() {
