@@ -4,8 +4,8 @@ import java.util.UUID;
 
 public class UniqueIdGenerator {
 
-            public  UUID idGenrator (){
-                return UUID.randomUUID();
-                }
-            }
+    public UUID idGenrator() {
+        return UUID.randomUUID();
+    }
+}
 

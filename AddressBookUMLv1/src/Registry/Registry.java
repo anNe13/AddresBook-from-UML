@@ -46,7 +46,7 @@ public class Registry  extends LocalContact {
         }
         return tempList;
     }
-    public void load(List<Contact>contacts){
+    public void load(List<Contact>contacts){ // varför är den tom?
 
     }
 }

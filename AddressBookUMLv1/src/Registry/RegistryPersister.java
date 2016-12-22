@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegistryPersister {
-    File filePath;
+    private File filePath;
+
     public void save(){
         try {
             FileOutputStream storeToFile = new FileOutputStream(filePath);
@@ -24,7 +25,7 @@ public class RegistryPersister {
             FileInputStream getFromFile = new FileInputStream(filePath);
             ObjectInputStream register = new ObjectInputStream(getFromFile);
             try {
-                tempRegister =(ArrayList<Contact>)register.readObject();
+                tempRegister =(List<Contact>)register.readObject();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
