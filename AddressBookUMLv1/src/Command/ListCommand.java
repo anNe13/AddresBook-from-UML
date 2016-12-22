@@ -16,7 +16,7 @@ public class ListCommand implements Command {
     private List<String> parameters;
 
     private RemoteRegistry remote;
-    private PrintContactList printContactList;
+    private ContactListSorter printContactList;
     public ListCommand (ConsolePrinter consoleprinter, Registry registry, RemoteRegistry remoteRegistry, List<String> parameters){
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;
@@ -34,10 +34,11 @@ public class ListCommand implements Command {
 
     public void execute() throws InvalidCommandParameterException {
         if (validate()) {
-            printContactList = new PrintContactList();
+            ContatcsFormatter contatcsFormatter = new ContatcsFormatter();
             List<Contact> bothLists = registry.getContacts();
             bothLists.addAll(remote.getRemoteContacts());
-            printContactList.printer(bothLists);
+
+            contatcsFormatter.printer(bothLists);
 
         }
 
