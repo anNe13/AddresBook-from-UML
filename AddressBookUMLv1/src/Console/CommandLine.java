@@ -20,18 +20,10 @@ public class CommandLine {
 
     public CommandLine parse(String text) { //Nikolaj påpekar outofband exception
         String[] temp = text.split(" ");
-
-
-
-
-
         command = temp[0];
+
         for (int i = 1; i < temp.length; i++){
-
-            System.out.println(parameters);
             parameters.add(temp[i]);
-
-
         }
         return this;
     }
