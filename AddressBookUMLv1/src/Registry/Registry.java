@@ -14,7 +14,7 @@ public class Registry  extends LocalContact {
     private List<Contact> contacts;
     private LocalContact contact;
 
-
+public Registry(){}
 
     public Registry(String firstName, String lastName, String email) {
         super(firstName, lastName, email);
