@@ -4,7 +4,7 @@ public class Application {
     private CommandLine commandLine;
     private CommandLineInterface commandLineInterface;
 
-    void start(){
+    public void start(){
         commandLine = new CommandLine();
         commandLineInterface = new CommandLineInterface();
 
