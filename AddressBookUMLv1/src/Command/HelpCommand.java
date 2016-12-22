@@ -11,7 +11,7 @@ public class HelpCommand {
     public String format(){
         helpMeny = new HelpMeny();
 
-        List<Commands> tempList = new ArrayList<>();
+        List<Commands> tempList;
         String temp = "";
 
         tempList = helpMeny.getCommands();
