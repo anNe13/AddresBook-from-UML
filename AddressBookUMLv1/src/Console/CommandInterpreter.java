@@ -24,15 +24,15 @@ public class CommandInterpreter {
             case "add":
                 return new AddContactCommand(console, registry, commandLine.getParameters());
             case "list":
-                ListCommand listCommand = new ListCommand(console,registry,remoteRegistry);
+                ListCommand listCommand = new ListCommand(console,registry,remoteRegistry, commandLine.getParameters());
                 listCommand.execute();
                 return listCommand;
             case "delete":
                 return new DeleteContactCommand(console, registry, commandLine.getParameters());
             case "search":
-                return new SearchCommand(console,registry,remoteRegistry,command);
+                return new SearchCommand(console,registry,remoteRegistry,commandLine.getParameters());
             case "help":
-                //return new HelpCommand();
+                //return new HelpCommand(Command command);
             case "quit":
                 console.print("Stänger av programmet...");
                 System.exit(0);
