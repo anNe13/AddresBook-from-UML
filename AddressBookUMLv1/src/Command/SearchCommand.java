@@ -5,6 +5,7 @@ import Console.ConsolePrinter;
 import Contact.Contact;
 import Registry.Registry;
 import RemoteReg.RemoteRegistry;
+//import ContactsFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class SearchCommand implements Command {
     private List<String> parameters;
 
     private RemoteRegistry remote;
-    private PrintContactList printContactList;
+   // private ContactsFormatter printContactList;
     public SearchCommand (ConsolePrinter consoleprinter, Registry registry, RemoteRegistry remoteRegistry, List<String> parameters){
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;
@@ -39,7 +40,7 @@ public class SearchCommand implements Command {
             List<Contact> temp = null;
             temp = registry.search(parameters.get(0));
             temp.addAll(remoteRegistry.search(parameters.get(0)));
-            new PrintContactList().printer(temp);
+            new ContatcsFormatter().printer(temp);
         }
     }
 

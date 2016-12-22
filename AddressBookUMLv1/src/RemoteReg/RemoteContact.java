@@ -1,5 +1,4 @@
 package RemoteReg;
-
 import Contact.Contact;
 import Contact.ContactDetails;
 
@@ -30,4 +29,5 @@ public class RemoteContact extends ContactDetails implements Contact {
     public String getEmailAddress() {
         return this.getEmailAddress();
     }
+
 }

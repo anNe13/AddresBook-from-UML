@@ -22,5 +22,7 @@ public class LocalContact extends ContactDetails implements Contact {
         return String.valueOf(id);
     }
 
+
+
     //public LocalContact(){} // behövs inte
 }
