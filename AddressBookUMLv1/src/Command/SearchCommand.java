@@ -13,23 +13,34 @@ public class SearchCommand implements Command {
     private Registry registry;
     private RemoteRegistry remoteRegistry;
     String term;
+    private List<String> parameters;
 
     private RemoteRegistry remote;
     private PrintContactList printContactList;
-    public SearchCommand (ConsolePrinter consoleprinter, Registry registry, RemoteRegistry remoteRegistry, String term){
+    public SearchCommand (ConsolePrinter consoleprinter, Registry registry, RemoteRegistry remoteRegistry, List<String> parameters){
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;
         this.term=term;
+        this.parameters= parameters;
     }
 
-
+    boolean validate() {
+        boolean isValid = true;
+        if (parameters.size() != 1) {
+            isValid = false;
+            throw new InvalidCommandParameterException("fel antal parameter");
+        }
+        return isValid;
+    }
 
     public void execute() throws InvalidCommandParameterException {
+        if (validate()) {
 
-        List<Contact> temp = null ;
-        temp= registry.search(term);
-        temp.addAll(remoteRegistry.search(term));
-        new PrintContactList().printer(temp);
+            List<Contact> temp = null;
+            temp = registry.search(parameters.get(0));
+            temp.addAll(remoteRegistry.search(parameters.get(0)));
+            new PrintContactList().printer(temp);
+        }
     }
 
 
