@@ -32,7 +32,7 @@ public class CommandInterpreter {
             case "search":
                 return new SearchCommand(console,registry,remoteRegistry,commandLine.getParameters());
             case "help":
-                //return new HelpCommand(Command command);
+                //return new HelpCommand();
             case "quit":
                 console.print("Stänger av programmet...");
                 System.exit(0);

@@ -6,24 +6,24 @@ import Contact.*;
 
 public class RemoteRegistry extends RemoteContact {
 
-    private List<RemoteContact> remoteContacts;
+    private List<Contact> remoteContacts;
 
-    private List<RemoteContact> getContacts() {
+    private List<Contact> getContacts() {
         return remoteContacts;
     }
 
-    public List<RemoteContact> getRemoteContacts() {
+    public List<Contact> getRemoteContacts() {
         return remoteContacts;
     }
 
     public List<Contact> search(String term) {
         remoteContacts = new ArrayList<>();
         List<Contact> foundList = new ArrayList<>();
-        for (RemoteContact remoteContact : remoteContacts) {
+        for (Contact contact : remoteContacts) {
 
-            if (remoteContact.getFirstName().toLowerCase().startsWith(term.toLowerCase())
-                    || remoteContact.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
-                foundList.add(remoteContact);
+            if (contact.getFirstName().toLowerCase().startsWith(term.toLowerCase())
+                    || contact.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
+                foundList.add(contact);
             }
         }
         return foundList;//foundList kan vara null

@@ -10,10 +10,10 @@ public class HelpCommand {
 
     public HelpCommand() {
         console = new Console();
-        //console.print(format());
+        console.print(format());
     }
 
-    public String format(Command command) {
+    public String format() {
         helpMeny = new HelpMeny();
 
         List<Commands> tempList;
