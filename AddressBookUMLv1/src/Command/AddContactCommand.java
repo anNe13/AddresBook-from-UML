@@ -1,8 +1,6 @@
 package Command;
 
-import Command.Command;
 import Console.ConsolePrinter;
-import Command.InvalidCommandParameterException;
 import Registry.Registry;
 import java.util.List;
 
