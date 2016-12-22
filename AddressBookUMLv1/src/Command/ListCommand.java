@@ -17,6 +17,7 @@ public class ListCommand implements Command {
 
     private RemoteRegistry remote;
     private ContactListSorter printContactList;
+
     public ListCommand (ConsolePrinter consoleprinter, Registry registry, RemoteRegistry remoteRegistry, List<String> parameters){
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;

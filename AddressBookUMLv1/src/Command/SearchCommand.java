@@ -17,7 +17,7 @@ public class SearchCommand implements Command {
     private List<String> parameters;
 
     private RemoteRegistry remote;
-   // private ContactsFormatter printContactList;
+
     public SearchCommand (ConsolePrinter consoleprinter, Registry registry, RemoteRegistry remoteRegistry, List<String> parameters){
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;
