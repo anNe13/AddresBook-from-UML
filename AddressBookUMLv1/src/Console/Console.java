@@ -1,9 +1,12 @@
 package Console;
 
 import Console.CommandLine;
+
 import java.util.Scanner;
 
 public class Console implements ConsolePrinter {
+    private CommandLine commandLine;
+    private Scanner scanner;
 
 
     @Override
@@ -18,16 +21,15 @@ public class Console implements ConsolePrinter {
 
     }
 
-        public CommandLine userInput() {
-            CommandLine cl = new CommandLine();
-            Scanner scanner = new Scanner(System.in);
+    public CommandLine userInput() {
+        commandLine = new CommandLine();
+        scanner = new Scanner(System.in);
 
-            while (scanner.hasNextLine()) {
-                cl = cl.parse(scanner.nextLine());
-            }
-            return cl;
+        while (scanner.hasNextLine()) {
+            commandLine = commandLine.parse(scanner.nextLine());
         }
-
+        return commandLine;
+    }
 
 
 }
