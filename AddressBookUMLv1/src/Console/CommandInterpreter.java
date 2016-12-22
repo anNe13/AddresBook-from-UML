@@ -3,8 +3,6 @@ import Command.*;
 import Command.Command;
 import Registry.Registry;
 
-import java.io.PrintWriter;
-
 public class CommandInterpreter {
     private Console console;
     private Registry registry;
