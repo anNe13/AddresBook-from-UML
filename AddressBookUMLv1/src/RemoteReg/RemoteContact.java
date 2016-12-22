@@ -7,7 +7,7 @@ public class RemoteContact extends ContactDetails implements Contact {
 
     private String id;
 
-
+    public RemoteContact(){}
     public RemoteContact(String id, String firstName, String lastName, String email) {
 
         firstName = this.getFirstName();

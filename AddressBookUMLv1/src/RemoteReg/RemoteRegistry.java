@@ -6,29 +6,30 @@ import Contact.*;
 
 public class RemoteRegistry extends RemoteContact {
 
-    private ArrayList<Contact> remoteContacts = new ArrayList<Contact>();
+    private List<RemoteContact> remoteContacts;
 
-    private ArrayList<Contact> getContacts() {
+    private List<RemoteContact> getContacts() {
         return remoteContacts;
     }
 
-    public ArrayList<Contact> getRemoteContacts() {
+    public List<RemoteContact> getRemoteContacts() {
         return remoteContacts;
     }
 
-    private ArrayList<Contact> search(String term) {
-        ArrayList<Contact> foundList = new ArrayList<Contact>();
-        for (Contact c : remoteContacts) {
+    public List<Contact> search(String term) {
+        remoteContacts = new ArrayList<>();
+        List<Contact> foundList = new ArrayList<>();
+        for (RemoteContact remoteContact : remoteContacts) {
 
-            if (c.getFirstName().toLowerCase().startsWith(term.toLowerCase()) || c.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
-                foundList.add(c);
+            if (remoteContact.getFirstName().toLowerCase().startsWith(term.toLowerCase())
+                    || remoteContact.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
+                foundList.add(remoteContact);
             }
-
         }
         return foundList;//foundList kan vara null
     }
 
-    private void add(String id, String firtName, String lastName, String email) {
+    public void add(String id, String firtName, String lastName, String email) {
         RemoteContact rContact = new RemoteContact(id, firtName, lastName, email);
         remoteContacts.add(rContact);
     }
