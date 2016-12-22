@@ -2,10 +2,8 @@ package Console;
 
 import Command.Command;
 import Command.InvalidCommandException;
-import Command.Methods.AddContactCommand;
+import Command.AddContactCommand;
 import Registry.Registry;
-
-import java.util.List;
 
 public class CommandInterpreter {
     private Console console;

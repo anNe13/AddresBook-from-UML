@@ -1,5 +1,6 @@
 package Command;
 
+import Command.Command;
 import Contact.Contact;
 import Registry.Registry;
 import RemoteReg.RemoteRegistry;
@@ -13,7 +14,7 @@ public class ListCommand implements Command {
     private PrintContactList printContactList;
 
     @Override
-    public void execute() throws InvalidCommandParameterException {
+    public void execute() throws Command.InvalidCommandParameterException {
         reg = new Registry();
         remote = new RemoteRegistry();
         printContactList = new PrintContactList();

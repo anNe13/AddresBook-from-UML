@@ -1,4 +1,4 @@
-package Command.Methods;
+package Command;
 
 import Command.Command;
 import Console.ConsolePrinter;
