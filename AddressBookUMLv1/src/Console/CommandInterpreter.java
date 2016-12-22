@@ -2,8 +2,7 @@ package Console;
 
 import Command.Command;
 import Command.InvalidCommandException;
-import Command.InvalidCommandParameterException;
-import Command.AddContactCommand;
+import Command.Methods.AddContactCommand;
 import Registry.Registry;
 
 import java.util.List;
