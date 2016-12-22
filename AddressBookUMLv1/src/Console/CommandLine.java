@@ -4,8 +4,17 @@ import java.util.List;
 
 public class CommandLine {
 
-    protected String command;
-    protected List<String> parameters;
+
+    private String command;
+    private List<String> parameters;
+
+    public String getCommand() {
+        return command;
+    }
+
+    public List<String> getParameters() {
+        return parameters;
+    }
 
     public CommandLine parse(String text) { //Nikolaj påpekar outofband exception
         String[] temp = text.split(" ");

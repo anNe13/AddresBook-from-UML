@@ -23,7 +23,7 @@ public class CommandInterpreter {
 
         switch (command){
             case "add":
-                return new AddContactCommand(console, registry, commandLine.parameters);
+                return new AddContactCommand(console, registry, commandLine.getParameters());
                 break;
             case "list" :
                 return
