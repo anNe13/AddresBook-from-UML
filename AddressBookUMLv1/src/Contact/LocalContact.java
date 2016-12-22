@@ -6,7 +6,7 @@ public class LocalContact extends ContactDetails implements Contact {
 
     private UUID id;
 
-    public LocalContact(){}
+    // public LocalContact(){}
 
     public LocalContact(String firstName, String lastName, String email) {
         firstName = getFirstName();
@@ -16,7 +16,7 @@ public class LocalContact extends ContactDetails implements Contact {
 
     public void setId(UUID id) {
         this.id = id;
-    }
+    }           //Inte enligt design
 
     public String getId() {
         return String.valueOf(id);

@@ -17,7 +17,7 @@ public class ContatcsFormatter {
     }
     public String format(Contact contact){
         String contactDetail;
-        contactDetail = contact.getId().toString() + contact.getFirstName().toString() + contact.getLastName().toString() + contact.getEmailAddress().toString();
+        contactDetail = contact.getId().toString() + "\n" + contact.getFirstName().toString() +"\n"+ contact.getLastName().toString() +"\n"+ contact.getEmailAddress().toString();
 
             return contactDetail;
     }
