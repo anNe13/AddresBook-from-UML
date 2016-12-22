@@ -14,19 +14,20 @@ public class CommandInterpreter {
     private String command;
 
 
-    public Command interpret(CommandLine commandLine)throws InvalidCommandException {
-         console = new Console();
+    public Command interpret(CommandLine commandLine) throws InvalidCommandException {
+        console = new Console();
         registry = new Registry();
 
         command = commandLine.getCommand().toLowerCase();
         String[] commandList = {"add", "list", "delete", "help", "quit", "search"};
 
-        switch (command){
+        switch (command) {
             case "add":
                 return new AddContactCommand(console, registry, commandLine.getParameters());
-                break;
-            case "list" :
-                return
+            break;
+            case "list":
+                //return new ListCommand
         }
+
     }
 }
