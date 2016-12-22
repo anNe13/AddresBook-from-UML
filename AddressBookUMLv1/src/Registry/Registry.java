@@ -10,20 +10,23 @@ import java.util.UUID;
 
 public class Registry  extends LocalContact {
 
-    private ArrayList<Contact> contacts = new ArrayList<Contact>();
+    private List<Contact> contacts;
+    private LocalContact contact;
 
-    public void addContact (String firstName, String lastName, String email ){
-        LocalContact contact= new LocalContact(firstName, lastName, email);
+    public Registry(String firstName, String lastName, String email) {
+        super(firstName, lastName, email);
+    }
+
+    public void addContact(String firstName, String lastName, String email ){
+        contact = new LocalContact(firstName, lastName, email);
         contact.setId(new UniqueIdGenerator().idGenrator());
         contacts.add (contact);
-
-
-//push
     }
-    public ArrayList<Contact> getContacts () {
+
+    public List<Contact> getContacts() {
        return contacts;
     }
-    public void deleteContact (String id){
+    public void deleteContact(String id){
         for (Contact contact : contacts){
             if (contact.getId().matches(id)){
                 contacts.remove(contact);
@@ -31,8 +34,8 @@ public class Registry  extends LocalContact {
                 return;
         }
     }
-    public  List <Contact> search (String term) {
-        ArrayList<Contact> tempList = null;
+    public List <Contact> search(String term) {
+        List<Contact> tempList = null;
         for (Contact contact : contacts){
             if (contact.getFirstName().startsWith(term)){
                 tempList.add(contact);
@@ -43,7 +46,7 @@ public class Registry  extends LocalContact {
         }
         return tempList;
     }
-    public void load (ArrayList<Contact>contacts){
+    public void load(List<Contact>contacts){
 
     }
 }
