@@ -18,7 +18,7 @@ public class CommandInterpreter {
          console = new Console();
         registry = new Registry();
 
-        command = commandLine.command.toLowerCase();
+        command = commandLine.getCommand().toLowerCase();
         String[] commandList = {"add", "list", "delete", "help", "quit", "search"};
 
         switch (command){

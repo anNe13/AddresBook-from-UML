@@ -2,7 +2,7 @@ package Contact;
 
 public class ContactDetails {
 
-    protected String firstName;
-    protected String lastName;
-    protected String email;
+    private String firstName;
+    private String lastName;
+    private String email;
 }
