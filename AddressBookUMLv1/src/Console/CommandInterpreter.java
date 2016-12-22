@@ -12,6 +12,7 @@ public class CommandInterpreter {
     private Console console;
     private Registry registry;
     private String command;
+    private Command commands;
 
 
     public Command interpret(CommandLine commandLine) throws InvalidCommandException {
@@ -28,6 +29,5 @@ public class CommandInterpreter {
             case "list":
                 //return new ListCommand
         }
-
     }
 }
