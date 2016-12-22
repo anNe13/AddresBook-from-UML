@@ -21,7 +21,7 @@ public class SearchCommand implements Command {
         this.remoteRegistry = remoteRegistry;
         this.term=term;
     }
-//push1
+
 
 
     public void execute() throws InvalidCommandParameterException {
