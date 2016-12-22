@@ -2,25 +2,16 @@ package Console;
 import Command.Command;
 public class CommandLineInterface implements InputHandler {
 
+    private Console console;
+    private CommandInterpreter commandInterpreter;
+
     @Override
     public void handle(CommandLine commandLine) {
-        Console console = new Console();
-        CommandInterpreter commandInterpreter = new CommandInterpreter();
+        console = new Console();
+        commandInterpreter = new CommandInterpreter();
         commandInterpreter.interpret(commandLine);
         console.registerInputHandler(this);
 
-
-        //console.registerInputHandler(this);
-
-
-        /*
-        CommandInterpreter commandInterpreter = new CommandInterpreter();
-        Command command = commandInterpreter.interpret(commandLine);
-        Console consol = new Console();
-        consol.registerInputHandler(command);
-command.execute();
-        //test
-        */
     }
 }
 
