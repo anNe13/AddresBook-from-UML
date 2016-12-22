@@ -5,20 +5,22 @@ import Registry.Registry;
 import RemoteReg.RemoteRegistry;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListCommand implements Command {
-    private Registry reg = new Registry();
-    private RemoteRegistry remote = new RemoteRegistry();
-    private PrintContactList printContactList = new PrintContactList();
+    private Registry reg;
+    private RemoteRegistry remote;
+    private PrintContactList printContactList;
 
     @Override
     public void execute() throws InvalidCommandParameterException {
-        ArrayList<Contact> bothLists = reg.getContacts();
+        reg = new Registry();
+        remote = new RemoteRegistry();
+        printContactList = new PrintContactList();
+        List<Contact> bothLists = reg.getContacts();
+
         bothLists.addAll(remote.getRemoteContacts());
         printContactList.printer(bothLists);
-
-
-
 
     }
 
