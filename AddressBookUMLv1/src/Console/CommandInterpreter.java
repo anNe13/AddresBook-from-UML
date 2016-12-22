@@ -14,7 +14,7 @@ public class CommandInterpreter {
     private Command commands;
 
 
-    public Command interpret(CommandLine commandLine) throws InvalidCommandException {
+   /* public Command interpret(CommandLine commandLine) throws InvalidCommandException {
         console = new Console();
         registry = new Registry();
 
@@ -29,4 +29,5 @@ public class CommandInterpreter {
                 //return new ListCommand
         }
     }
+    */
 }
