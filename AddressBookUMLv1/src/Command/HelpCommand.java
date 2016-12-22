@@ -13,7 +13,6 @@ public class HelpCommand {
 
         List<Commands> tempList;
         String temp = "";
-
         tempList = helpMeny.getCommands();
         for (Commands commands: tempList ){
             temp = tempList.toString().toLowerCase();
