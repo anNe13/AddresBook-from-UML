@@ -7,10 +7,12 @@ public class CommandLineInterface implements InputHandler {
 
     @Override
     public void handle(CommandLine commandLine) {
+
         console = new Console();
         commandInterpreter = new CommandInterpreter();
-        commandInterpreter.interpret(commandLine);
         console.registerInputHandler(this);
+        commandInterpreter.interpret(commandLine);
+
 
     }
 }
