@@ -1,10 +1,10 @@
-import Console.ApplicationAntonReMake;
+import Console.Application;
 
 public class Main {
 
     public static void main(String[] args) {
 
 
-        new ApplicationAntonReMake().start();
+        new Application().start();
     }
 }

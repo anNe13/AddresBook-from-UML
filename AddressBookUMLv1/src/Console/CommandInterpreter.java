@@ -1,46 +1,42 @@
-/*package Console;
+package Console;
+
+import Registry.*;
+import RemoteReg.*;
+import Registry.RegistryPersisterAntonReMake;
 import Command.*;
-import Command.Command;
-import Registry.Registry;
-import RemoteReg.RemoteRegistry;
 
 public class CommandInterpreter {
-    private Console console;
+    private Application app;
     private Registry registry;
-    private String command;
-    //private Command commands;
-    private RemoteRegistry remoteRegistry;
+    private RegistryPersisterAntonReMake registrypersister;
+    private RemoteRegistry remoteregistry;
 
+    public CommandInterpreter(Registry registry, RemoteRegistry remoteregestry, RegistryPersisterAntonReMake registrypersister, Application app){
+        this.registry = registry;
+        this.remoteregistry = remoteregestry;
+        this.registrypersister = registrypersister;
+        this.app = app;
 
-    public Command interpret(CommandLine commandLine) throws InvalidCommandException {
-        console = new Console();
-        registry = new Registry();
-        remoteRegistry = new RemoteRegistry();
+    }
 
-        command = commandLine.getCommand().toLowerCase();
-        String[] commandList = {"add", "list", "delete", "help", "quit", "search"};
-
-        switch (command) {
+    public Command interpret(CommandLine commandline){
+        switch (commandline.getCommand()) {
             case "add":
-                return new AddContactCommand(console, registry, commandLine.getParameters());
+                return new AddContactCommand(registry, commandline.getParameters());
             case "list":
-                ListCommand listCommand = new ListCommand(console,registry,remoteRegistry, commandLine.getParameters());
-                listCommand.execute();
-                return listCommand;
+                return new ListCommand(registry,remoteregistry);
             case "delete":
-                return new DeleteContactCommand(console, registry, commandLine.getParameters());
+                return new DeleteContactCommand(registry, commandline.getParameters());
             case "search":
-                return new SearchCommand(console,registry,remoteRegistry,commandLine.getParameters());
+                return new SearchCommand(registry,remoteregistry,commandline.getParameters());
             case "help":
                 //return new HelpCommand();
             case "quit":
-                console.print("Stänger av programmet...");
                 System.exit(0);
                 break;
+
 
         }
         return null;
     }
 }
-
-*/
