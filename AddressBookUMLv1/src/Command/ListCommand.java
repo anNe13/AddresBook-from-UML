@@ -1,47 +1,39 @@
 package Command;
 
-import Command.Command;
-import Console.ConsolePrinter;
+import Console.*;
 import Contact.Contact;
 import Registry.Registry;
 import RemoteReg.RemoteRegistry;
-import Command.InvalidCommandParameterException;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListCommand implements Command {
+    private ConsolePrinter consolePrinter = new Console();
     private Registry registry;
     private RemoteRegistry remoteRegistry;
-    private List<String> parameters;
 
-    private RemoteRegistry remote;
-    private ContactListSorter printContactList;
-
-    public ListCommand (ConsolePrinter consoleprinter, Registry registry, RemoteRegistry remoteRegistry, List<String> parameters){
+    public ListCommand(Registry registry, RemoteRegistry remoteRegistry) {
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;
     }
 
-    boolean validate() {
-        boolean isValid = true;
-        if (parameters.size() != 0) {
-            isValid = false;
-            throw new InvalidCommandParameterException("fel antal parameter");
-        }
-        return isValid;
-    }
-
-
     public void execute() throws InvalidCommandParameterException {
-        if (validate()) {
-            ContatcsFormatter contatcsFormatter = new ContatcsFormatter();
-            List<Contact> bothLists = registry.getContacts();
-            bothLists.addAll(remote.getRemoteContacts());
+        List<Contact> bothLists = new ArrayList<>();
 
-            contatcsFormatter.printer(bothLists);
+        bothLists.addAll(registry.getContacts());
+        bothLists.addAll(remoteRegistry.getRemoteContacts());
 
+        if (bothLists.isEmpty()) {
+            consolePrinter.print("List is empty");
         }
+        else {
+            for (Contact c : bothLists)
+                consolePrinter.print(new ContactFormatter().format(c));
+        }
+
+
 
     }
 

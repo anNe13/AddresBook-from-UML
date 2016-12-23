@@ -6,12 +6,12 @@ public class LocalContact extends ContactDetails implements Contact {
 
     private UUID id;
 
-    // public LocalContact(){}
+     public LocalContact(){}
 
     public LocalContact(String firstName, String lastName, String email) {
-        firstName = getFirstName();
-        lastName = getLastName();
-        email = getEmailAddress();
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
     }
 
     public void setId(UUID id) {

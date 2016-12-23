@@ -6,7 +6,7 @@ import Contact.*;
 
 public class RemoteRegistry extends RemoteContact {
 
-    private List<Contact> remoteContacts;
+    private List<Contact> remoteContacts = new ArrayList<Contact>();
 
     private List<Contact> getContacts() {
         return remoteContacts;

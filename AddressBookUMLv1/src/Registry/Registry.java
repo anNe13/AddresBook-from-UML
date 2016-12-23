@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class Registry  {//extends LocalContact { we shouldn't exctend LocalContact// NZ
 
-    private List<Contact> contacts;
+    private List<Contact> contacts = new ArrayList<>();
     private LocalContact contact;
 
 //public Registry(){}   //we don't need it // NZ

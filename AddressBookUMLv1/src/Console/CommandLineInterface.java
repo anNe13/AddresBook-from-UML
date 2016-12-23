@@ -1,4 +1,9 @@
+/*
 package Console;
+
+
+import Command.Command;
+
 public class CommandLineInterface implements InputHandler {
 
     private Console console;
@@ -13,6 +18,9 @@ public class CommandLineInterface implements InputHandler {
         commandInterpreter.interpret(commandLine);
 
 
+
+
     }
 }
 
+*/

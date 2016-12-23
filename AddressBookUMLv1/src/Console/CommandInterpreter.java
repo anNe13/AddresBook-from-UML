@@ -1,4 +1,4 @@
-package Console;
+/*package Console;
 import Command.*;
 import Command.Command;
 import Registry.Registry;
@@ -42,3 +42,5 @@ public class CommandInterpreter {
         return null;
     }
 }
+
+*/

@@ -1,14 +1,18 @@
 package Console;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CommandLine {
-
-
     private String command;
-    private List<String> parameters=new ArrayList<String>(); {
-    };
+    private List<String> parameters;
+
+    public CommandLine(){}
+    private CommandLine(String c, List<String> p){
+        this.command = c;
+        this.parameters = p;
+    }
 
     public String getCommand() {
         return command;
@@ -18,13 +22,16 @@ public class CommandLine {
         return parameters;
     }
 
-    public CommandLine parse(String text) { //Nikolaj påpekar outofband exception
-        String[] temp = text.split(" ");
-        command = temp[0];
+    public CommandLine parse(String text) { //Nikolay påpekar outofband exception
 
-        for (int i = 1; i < temp.length; i++){
-            parameters.add(temp[i]);
+        String[] temp = text.split(" ");
+        String theCommand = temp[0];
+
+        List<String> theParameters = new ArrayList<>();
+        for (int i = 1; i < temp.length; i++) {
+            theParameters.add(temp[i]);
         }
-        return this;
+        CommandLine commandline = new CommandLine(theCommand, theParameters);
+        return commandline;
     }
 }

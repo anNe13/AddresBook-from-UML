@@ -1,4 +1,4 @@
-package Console;
+/*package Console;
 
 public class Application {
     private CommandLine commandLine;
@@ -14,3 +14,4 @@ public class Application {
         System.exit(0);
     }
 }
+*/
