@@ -1,8 +1,9 @@
 package Contact;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class LocalContact extends ContactDetails implements Contact {
+public class LocalContact extends ContactDetails implements Contact, Serializable {
 
     private UUID id;
 
@@ -22,7 +23,4 @@ public class LocalContact extends ContactDetails implements Contact {
         return String.valueOf(id);
     }
 
-
-
-    //public LocalContact(){} // behövs inte
 }

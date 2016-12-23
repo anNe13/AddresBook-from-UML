@@ -32,9 +32,9 @@ public class CommandInterpreterAntonReMake {
             case "help":
                 //return new HelpCommand();
             case "quit":
-
                 System.exit(0);
                 break;
+
 
         }
         return null;

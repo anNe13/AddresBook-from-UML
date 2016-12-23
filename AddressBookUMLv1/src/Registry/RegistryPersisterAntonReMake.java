@@ -13,7 +13,7 @@ public class RegistryPersisterAntonReMake {
 
     public RegistryPersisterAntonReMake(Registry registry){
         this.registry = registry;
-    //    load();
+      //  load();  jag bort-kommenterade då denna inte fungerar, jag lade till serilizable om någon vill fixa resten /anton 23/12
     }
 
         public void save(){

@@ -4,22 +4,15 @@ package Registry;
 import Contact.Contact;
 import Contact.LocalContact;
 
-import java.awt.image.RGBImageFilter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
+
 
 public class Registry  {//extends LocalContact { we shouldn't exctend LocalContact// NZ
 
     private List<Contact> contacts = new ArrayList<>();
     private LocalContact contact;
 
-//public Registry(){}   //we don't need it // NZ
-
-   /* public Registry(String firstName, String lastName, String email) { //we don't need it // NZ
-      super(firstName, lastName, email);
-
-    }*/
 
     public void addContact(String firstName, String lastName, String email ){
         contact = new LocalContact(firstName, lastName, email);

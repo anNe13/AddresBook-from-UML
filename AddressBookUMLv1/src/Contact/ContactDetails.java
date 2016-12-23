@@ -1,12 +1,12 @@
 package Contact;
 
-public class ContactDetails {
+import java.io.Serializable;
+
+public class ContactDetails implements Serializable {
 
     private String firstName;
     private String lastName;
     private String email;
-
-
 
     public String getFirstName() {
         return firstName;

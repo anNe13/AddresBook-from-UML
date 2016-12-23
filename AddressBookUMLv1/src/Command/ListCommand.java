@@ -27,15 +27,11 @@ public class ListCommand implements Command {
 
         if (bothLists.isEmpty()) {
             consolePrinter.print("List is empty");
-        }
-        else {
+        } else {
             for (Contact c : bothLists)
                 consolePrinter.print(new ContactFormatter().format(c));
         }
 
-
-
     }
-
 
 }

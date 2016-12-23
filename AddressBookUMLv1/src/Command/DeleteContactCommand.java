@@ -1,10 +1,6 @@
 package Command;
 
-import Command.Command;
-import Command.InvalidCommandParameterException;
-import Console.Console;
-import Console.ConsolePrinter;
-import Contact.Contact;
+import Console.*;
 import Registry.Registry;
 
 import java.util.List;
@@ -13,9 +9,9 @@ public class DeleteContactCommand implements Command {
 
     private List<String> parameters;
     private Registry registry;
-    private ConsolePrinter consolePrinter;
+    private ConsolePrinter consolePrinter = new Console();
 
-    public DeleteContactCommand(Registry registry, List<String> parameters){
+    public DeleteContactCommand(Registry registry, List<String> parameters) {
         this.registry = registry;
         this.parameters = parameters;
     }
@@ -34,7 +30,7 @@ public class DeleteContactCommand implements Command {
         if (validate()) {
             try {
                 registry.deleteContact(parameters.get(0));
-            }catch(Exception e){
+            } catch (Exception e) {
                 consolePrinter.print("Could not find contact " + parameters.get(0) + " in local registry");
             }
         }

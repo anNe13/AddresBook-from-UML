@@ -1,10 +1,9 @@
 package Command;
 
-
-import Console.ConsolePrinter;
 import Contact.Contact;
 import Registry.Registry;
 import RemoteReg.RemoteRegistry;
+
 import java.util.List;
 
 public class SearchCommand implements Command {
@@ -15,11 +14,11 @@ public class SearchCommand implements Command {
 
     private RemoteRegistry remote;
 
-    public SearchCommand (Registry registry, RemoteRegistry remoteRegistry, List<String> parameters){
+    public SearchCommand(Registry registry, RemoteRegistry remoteRegistry, List<String> parameters) {
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;
-        this.term=term;
-        this.parameters= parameters;
+        this.term = term;
+        this.parameters = parameters;
     }
 
     boolean validate() {
@@ -37,10 +36,9 @@ public class SearchCommand implements Command {
             List<Contact> searchRes = null;
             searchRes = registry.search(parameters.get(0));
             searchRes.addAll(remoteRegistry.search(parameters.get(0)));
-            for (Contact c : searchRes )
-            new ContactFormatter().format(c);
+            for (Contact c : searchRes)
+                new ContactFormatter().format(c);
         }
     }
-
 
 }
