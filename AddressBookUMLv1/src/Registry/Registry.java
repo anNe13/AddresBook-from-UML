@@ -23,7 +23,7 @@ public class Registry  {//extends LocalContact { we shouldn't exctend LocalConta
 
     public void addContact(String firstName, String lastName, String email ){
         contact = new LocalContact(firstName, lastName, email);
-        contact.setId(new UniqueIdGenerator().idGenrator());
+        contact.setId(new UniqueIdGenerator().idGenrator()); //here the UUID is set
         contacts.add (contact);
     }
 
