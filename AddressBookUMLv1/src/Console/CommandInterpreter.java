@@ -31,10 +31,7 @@ public class CommandInterpreter {
                 return new SearchCommand(registry,remoteregistry,commandline.getParameters());
             case "help":
                 //return new HelpCommand();
-            case "quit":
-                System.exit(0);
-                break;
-
+            case "quit": return  new QuitCommand (registrypersister);
 
         }
         return null;

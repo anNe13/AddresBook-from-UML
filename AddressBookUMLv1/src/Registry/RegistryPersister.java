@@ -10,6 +10,14 @@ import java.util.List;
 public class RegistryPersister {
     private File filePath;
 
+
+
+    private ArrayList<Contact> persistedRegisrer;
+
+    public ArrayList<Contact> getPersistedRegisrer() {
+        return persistedRegisrer;
+    }
+
     public void save(){
         try {
             FileOutputStream storeToFile = new FileOutputStream(filePath);
@@ -21,11 +29,12 @@ public class RegistryPersister {
     }
     public void load(){
         try {
-            List<Contact> tempRegister = null;
+            ArrayList<Contact> tempRegister = new ArrayList<Contact>();
             FileInputStream getFromFile = new FileInputStream(filePath);
             ObjectInputStream register = new ObjectInputStream(getFromFile);
             try {
-                tempRegister =(List<Contact>)register.readObject();
+                tempRegister =(ArrayList<Contact>)register.readObject();
+                persistedRegisrer = tempRegister;
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }

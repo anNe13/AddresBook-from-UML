@@ -1,42 +1,63 @@
 package Registry;
+
 import Contact.Contact;
+
 import java.io.*;
+
 import Console.ConsolePrinter;
+
+import java.util.ArrayList;
 import java.util.List;
+
 import Console.Console;
 
 public class RegistryPersisterAntonReMake {
 
-        private String filePath = "adressbokserver.csv";
-        private Registry registry;
-        private ConsolePrinter consolePrinter = new Console();
+    private String filePath = "adressbokserver.csv";
 
-    public RegistryPersisterAntonReMake(Registry registry){
-        this.registry = registry;
-      //  load();  jag bort-kommenterade då denna inte fungerar, jag lade till serilizable om någon vill fixa resten /anton 23/12
+    private Registry registry;
+
+    public Registry getRegistry() {
+        return registry;
     }
 
-        public void save(){
-            try {
-                FileOutputStream storeToFile = new FileOutputStream(filePath);
-                ObjectOutputStream register = new ObjectOutputStream(storeToFile);
-            }catch (IOException ex){
-                ex.printStackTrace();
-            }
+    private ConsolePrinter consolePrinter = new Console();
 
+    public RegistryPersisterAntonReMake(Registry registry) {
+        this.registry = registry;
+        load(); // done NZ
+    }
+
+    public void save() {
+
+        try {
+            FileOutputStream storeToFile = new FileOutputStream(filePath);
+            ObjectOutputStream register = new ObjectOutputStream(storeToFile);
+            register.writeObject(registry.getContacts());
+
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-        public void load(){
-            try {
-                List<Contact> tempRegister = null;
+
+    }
+
+    public void load() {
+        try {
+            if ((new File(filePath).length() == 0)) {
+                registry.load(new ArrayList<Contact>());
+            } else {
                 FileInputStream getFromFile = new FileInputStream(filePath);
                 ObjectInputStream register = new ObjectInputStream(getFromFile);
                 try {
-                    tempRegister =(List<Contact>)register.readObject();
+                    registry.load((ArrayList<Contact>) register.readObject());
+
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+}
