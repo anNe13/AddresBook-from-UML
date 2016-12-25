@@ -13,13 +13,17 @@ public class CommandLineInterface implements InputHandler{
     private CatalogueLoader catalogueloader = new CatalogueLoader(remoteregistry);
 
     private Console console = new Console();
-    private AutoSave autosave = new AutoSave();//kan behöva göras så autosave tar in registrypersister som parameter
+    private AutoSave autosave = new AutoSave(registrypersister); //kan behöva göras så autosave tar in registrypersister som parameter //yes:NZ, did it as parameter//
 
     private CommandInterpreter comandinterpreter;
 
     public CommandLineInterface(Application app){
         comandinterpreter = new CommandInterpreter(registry,remoteregistry, registrypersister,app);
+
         catalogueloader.run();
+
+        Thread autosaveThread = new Thread (autosave);
+        autosaveThread.start();
         console.registerInputHandler(this);
     }
 

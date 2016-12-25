@@ -1,16 +1,30 @@
 package Registry;
 
+import Contact.Contact;
+
+import java.util.List;
+
 public class AutoSave implements Runnable{
+
+    private RegistryPersisterAntonReMake registryPersister;
+    public AutoSave(RegistryPersisterAntonReMake registryPersister) {
+        this.registryPersister=registryPersister;
+    }
+
     public void run() {
         while(true) {
-            RegistryPersister autoSave = new RegistryPersister();
-            autoSave.save();
+
+            safeThis(registryPersister);
+
             try {
-                //System.out.println("autosaving");
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+    }
+    public  synchronized void safeThis (RegistryPersisterAntonReMake registryPersister){
+        registryPersister= this.registryPersister;
+        registryPersister.save();
     }
 }
