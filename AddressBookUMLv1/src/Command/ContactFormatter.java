@@ -5,7 +5,10 @@ import Contact.Contact;
 public class ContactFormatter {
 
     public String format(Contact c) {
-        return String.format("First name : %s\nSecond name: %s \nMail: %s \nID: %s\n"
-                , c.getFirstName(), c.getLastName(), c.getLastName(), c.getEmailAddress(), c.getId());
+        return  "First name:  " + c.getFirstName()+ "\n" +
+                "Second name: " +c.getLastName()+ "\n"+
+                "Email:       "+  c.getEmailAddress()+ "\n" +
+                "ID:          " +c.getId()+ "\n";
+
     }
 }
