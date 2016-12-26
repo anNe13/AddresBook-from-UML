@@ -11,11 +11,9 @@ import java.util.List;
 public class Registry  {//extends LocalContact { we shouldn't exctend LocalContact// NZ
 
     private List<Contact> contacts = new ArrayList<>();
-    private LocalContact contact;
-
 
     public void addContact(String firstName, String lastName, String email ){
-        contact = new LocalContact(firstName, lastName, email);
+        LocalContact contact = new LocalContact(firstName, lastName, email);
         contact.setId(new UniqueIdGenerator().idGenrator()); //here the UUID is set
         contacts.add (contact);
     }
@@ -23,6 +21,7 @@ public class Registry  {//extends LocalContact { we shouldn't exctend LocalConta
     public List<Contact> getContacts() {
        return contacts;
     }
+
     public void deleteContact(String id){
         for (Contact contact : contacts){
             if (contact.getId().matches(id)){
