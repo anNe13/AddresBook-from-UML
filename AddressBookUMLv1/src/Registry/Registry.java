@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Registry  {//extends LocalContact { we shouldn't exctend LocalContact// NZ
+public class Registry  {
 
     private List<Contact> contacts = new ArrayList<>();
 
