@@ -10,9 +10,8 @@ public class RemoteCatalogueFactoryNZ {
     public RemoteCatalogueFactoryNZ(CatalogueLoaderNZ catalogueLoader) {
         this.catalogueLoader = catalogueLoader;
         RemoteCatalogueFactory(61616);
-        System.out.println("q2");
         create("localhost", defaultPort);
-        System.out.println("q3");
+       // create("172.20.200.157", defaultPort);
     }
 
     public void RemoteCatalogueFactory(int port) {
@@ -20,7 +19,6 @@ public class RemoteCatalogueFactoryNZ {
     }
 
     public void create(String host, int port) {
-        System.out.println("q4");
         AtomicRemoteCatalogueProxyNZ atomicRemoteCatalogueProxy = new AtomicRemoteCatalogueProxyNZ(host, port);
         catalogueLoader.loadRemoteContacts(atomicRemoteCatalogueProxy.getContacts());
     }

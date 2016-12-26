@@ -12,7 +12,7 @@ public class AtomicRemoteCatalogueProxyNZ implements RemoteCatalogueProxy {
     public int getPort() {return port;}
 
     public AtomicRemoteCatalogueProxyNZ(String host, int port) {
-        System.out.println("q5");
+
         this.host=host;
         this.port=port;
     }

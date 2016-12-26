@@ -14,7 +14,6 @@ public class CatalogueLoaderNZ {
     public void run() {
 
         new Thread(() -> {
-            System.out.println("q1");
             new RemoteCatalogueFactoryNZ(this);
         }).start();
     }

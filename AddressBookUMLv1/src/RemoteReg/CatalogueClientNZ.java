@@ -32,12 +32,9 @@ public class CatalogueClientNZ {
     }
     public void sendRequest(String request) {
         try {
-            OutputStream outputStream = socket.getOutputStream();
-            PrintWriter printWriter = new PrintWriter(outputStream, true);
-            printWriter.println(request);
-            //PrintWriter writer = new PrintWriter(socket.getOutputStream());
-           // writer.println(request);
-            System.out.println("a1");
+            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+            writer.println(request);
+
         } catch (IOException | NullPointerException e) {
         }
     }
