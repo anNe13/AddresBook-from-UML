@@ -7,8 +7,6 @@ public class LocalContact extends ContactDetails implements Contact, Serializabl
 
     private UUID id;
 
-     public LocalContact(){}
-
     public LocalContact(String firstName, String lastName, String email) {
         setFirstName(firstName);
         setLastName(lastName);
