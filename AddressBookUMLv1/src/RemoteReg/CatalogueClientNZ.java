@@ -43,12 +43,10 @@ public class CatalogueClientNZ {
         List<String> catalogueContacts= new ArrayList<>();
         try {
 
-            //BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            InputStream inputStream = socket.getInputStream();
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
             //for (String line = bufferedReader.readLine(); !line.equals("EOF"); line = bufferedReader.readLine()) {
-            for (String line = bufferedReader.readLine(); line != null; line = bufferedReader.readLine()) {
+            for (String line = reader.readLine(); line != null; line = reader.readLine()) {
                 catalogueContacts.add(line);
             }
         } catch (IOException | NullPointerException e) {
