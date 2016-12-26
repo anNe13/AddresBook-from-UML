@@ -45,6 +45,7 @@ public class CatalogueClient {
     public String waitForResponse() {
 
         String fileContentStr = "";
+
         try {
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 

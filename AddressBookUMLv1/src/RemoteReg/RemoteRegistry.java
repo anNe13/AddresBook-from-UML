@@ -4,7 +4,7 @@ import java.util.*;
 
 import Contact.*;
 
-public class RemoteRegistry extends RemoteContact {
+public class RemoteRegistry  {
 
     private List<Contact> remoteContacts = new ArrayList<Contact>();
 

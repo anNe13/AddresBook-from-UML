@@ -14,17 +14,17 @@ public class AtomicRemoteCatalogueProxy implements RemoteCatalogueProxy {
         catalogueclient = new CatalogueClient(host, port);
     }
 
-    public List<Contact> getContacts() {
+    public List<String> getContacts() {
         catalogueclient.connect();
         catalogueclient.sendRequest("getAll");//Osäker på om det är här getAll ska skrivas.
 
-        List<Contact> tempServerContacts = new ArrayList<>();
+        List<String> tempServerContacts = new ArrayList<>();
         String responsContacts = catalogueclient.waitForResponse();
         Scanner scanner = new Scanner(responsContacts);
 
         while (scanner.hasNextLine()) {
             String tempLine[] = scanner.nextLine().split(",");
-            tempServerContacts.add(new RemoteContact(tempLine[0], tempLine[1], tempLine[2], tempLine[3]));
+           // tempServerContacts.add(new RemoteContact(tempLine[0], tempLine[1], tempLine[2], tempLine[3]));
         }
 
         catalogueclient.disconnect("exit");

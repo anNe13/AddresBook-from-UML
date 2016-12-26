@@ -12,9 +12,7 @@ public class ContactDetails implements Serializable {
         return firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
+    public String getLastName() {return lastName;}
 
     public String getEmailAddress() {
         return email;
