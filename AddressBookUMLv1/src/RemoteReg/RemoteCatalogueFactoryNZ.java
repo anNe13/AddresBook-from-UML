@@ -11,7 +11,7 @@ public class RemoteCatalogueFactoryNZ {
         this.catalogueLoader = catalogueLoader;
         RemoteCatalogueFactory(61616);
         create("localhost", defaultPort);
-       // create("172.20.200.157", defaultPort);
+        create("172.20.200.157", defaultPort);
     }
 
     public void RemoteCatalogueFactory(int port) {

@@ -21,7 +21,7 @@ public class DeleteContactCommand implements Command {
         boolean isValid = true;
         if (parameters.size() != 1) {
             isValid = false;
-            throw new InvalidCommandParameterException("fel antal parameter");
+            throw new InvalidCommandParameterException();
         }
         return isValid;
     }
@@ -30,7 +30,7 @@ public class DeleteContactCommand implements Command {
         if (validate()) {
             try {
                 registry.deleteContact(parameters.get(0));
-            } catch (Exception e) {
+            } catch (InvalidCommandParameterException e) {
                 consolePrinter.print("Could not find contact " + parameters.get(0) + " in local registry");
             }
         }

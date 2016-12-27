@@ -35,13 +35,9 @@ public class CommandLineInterface implements InputHandler{
 
             command.execute();
 
-        } catch (InvalidCommandException invComEx) {
-
-        } catch (Exception ex) {
-
-            console.print("Invalid command: " + commandLine.getCommand());
-            ex.printStackTrace();
+        } catch (InvalidCommandException | InvalidCommandParameterException e) {
+            console.print(e.getMessage());
         }
     }
-    }
+}
 

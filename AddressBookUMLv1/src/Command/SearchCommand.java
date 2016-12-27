@@ -25,7 +25,7 @@ public class SearchCommand implements Command {
         boolean isValid = true;
         if (parameters.size() != 1) {
             isValid = false;
-            throw new InvalidCommandParameterException("fel antal parameter");
+            throw new InvalidCommandParameterException();
         }
         return isValid;
     }

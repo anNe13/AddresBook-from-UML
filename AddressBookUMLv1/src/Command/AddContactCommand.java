@@ -19,7 +19,7 @@ public class AddContactCommand implements Command {
         boolean isValid = true;
         if (parameters.size() != 3) {
             isValid = false;
-            throw new InvalidCommandParameterException("fel antal parameter");
+            throw new InvalidCommandParameterException();
         }
         return isValid;
     }

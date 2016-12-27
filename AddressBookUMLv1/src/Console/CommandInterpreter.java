@@ -11,7 +11,7 @@ public class CommandInterpreter {
     private RegistryPersisterAntonReMake registrypersister;
     private RemoteRegistry remoteregistry;
 
-    public CommandInterpreter(Registry registry, RemoteRegistry remoteregestry, RegistryPersisterAntonReMake registrypersister, Application app){
+    public CommandInterpreter(Registry registry, RemoteRegistry remoteregestry, RegistryPersisterAntonReMake registrypersister, Application app) {
         this.registry = registry;
         this.remoteregistry = remoteregestry;
         this.registrypersister = registrypersister;
@@ -19,21 +19,26 @@ public class CommandInterpreter {
 
     }
 
-    public Command interpret(CommandLine commandline){
-        switch (commandline.getCommand()) {
-            case "add":
-                return new AddContactCommand(registry, commandline.getParameters());
-            case "list":
-                return new ListCommand(registry,remoteregistry);
-            case "delete":
-                return new DeleteContactCommand(registry, commandline.getParameters());
-            case "search":
-                return new SearchCommand(registry,remoteregistry,commandline.getParameters());
-            case "help":
-                //return new HelpCommand();
-            case "quit": return  new QuitCommand (registrypersister);
+    public Command interpret(CommandLine commandline) {
 
-        }
-        return null;
+            switch (commandline.getCommand()) {
+                case "add":
+                    return new AddContactCommand(registry, commandline.getParameters());
+                case "list":
+                    return new ListCommand(registry, remoteregistry);
+                case "delete":
+                    return new DeleteContactCommand(registry, commandline.getParameters());
+                case "search":
+                    return new SearchCommand(registry, remoteregistry, commandline.getParameters());
+                case "help":
+                     return new HelpCommand();
+                case "quit":
+                    return new QuitCommand(registrypersister);
+                default:
+                    throw new InvalidCommandException();
+
+            }
+
+
     }
 }
