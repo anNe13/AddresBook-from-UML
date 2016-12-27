@@ -23,6 +23,16 @@ public class HelpCommand  implements Command{
     }
 
     @Override
+    public String getName() {
+        return "help";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Type: help to see all valid commands";
+    }
+
+    @Override
     public void execute() throws InvalidCommandParameterException {
         console = new Console();
         console.print(format());

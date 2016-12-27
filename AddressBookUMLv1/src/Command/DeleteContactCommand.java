@@ -20,6 +20,10 @@ public class DeleteContactCommand implements Command {
         this.remoteregistry = remoteregistry;
     }
 
+    public DeleteContactCommand() {
+
+    }
+
 
     boolean validate() {
         boolean isValid = true;
@@ -27,6 +31,16 @@ public class DeleteContactCommand implements Command {
             throw new InvalidCommandParameterException();
         }
         return isValid;
+    }
+
+    @Override
+    public String getName() {
+        return "delete";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Type: delete followed by";
     }
 
     public void execute() throws InvalidCommandParameterException {

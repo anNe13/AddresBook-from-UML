@@ -14,9 +14,22 @@ public class ListCommand implements Command {
     private Registry registry;
     private RemoteRegistry remoteRegistry;
 
+    public ListCommand() {
+
+    }
     public ListCommand(Registry registry, RemoteRegistry remoteRegistry) {
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;
+    }
+
+    @Override
+    public String getName() {
+        return "list";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Type: list to show all contacts";
     }
 
     public void execute() throws InvalidCommandParameterException {

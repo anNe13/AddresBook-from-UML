@@ -2,20 +2,22 @@ package Command;
 
 public enum Commands {
 
-    LIST("Type: list to see all contats"),
-    ADD("Type: add followed by first name and second name"),
-    QUIT("Type: quit to exit application"),
-    DELETE("Type delete followed by"),
-    SEARCH("Type search followed by the first letter/letters in first or second name"),
-    HELP("Type help to see all valid commands");
+    LIST(new ListCommand().getName(), new ListCommand().getDescription()),
+    ADD(new AddContactCommand().getName(), new AddContactCommand().getDescription()),
+    QUIT(new QuitCommand().getName(), new QuitCommand().getDescription()),
+    DELETE(new DeleteContactCommand().getName(), new DeleteContactCommand().getDescription()),
+    SEARCH(new SearchCommand().getName(), new SearchCommand().getDescription()),
+    HELP(new HelpCommand().getName(), new HelpCommand().getDescription());
 
-    public final String commandInfo;
+    public final String commandName;
+    public final String commandDesc;
 
-    Commands(String cInfo){
-        commandInfo = cInfo;
+    Commands(String cName, String cDesc){
+        commandName = cName;
+        commandDesc = cDesc;
     }
 
     public String getCommandInfo(){
-        return commandInfo;
+        return String.format("--%s-- %s", commandName,commandDesc);
     }
 }

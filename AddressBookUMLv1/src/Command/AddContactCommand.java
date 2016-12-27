@@ -14,6 +14,10 @@ public class AddContactCommand implements Command {
         this.registry = registry;
     }
 
+    public AddContactCommand() {
+
+    }
+
 
     boolean validate() {
         boolean isValid = true;
@@ -24,6 +28,16 @@ public class AddContactCommand implements Command {
         return isValid;
     }
 
+
+    @Override
+    public String getName() {
+        return "add";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Type: add followed by first name and second name";
+    }
 
     public void execute() throws InvalidCommandParameterException {
         if (validate()) {

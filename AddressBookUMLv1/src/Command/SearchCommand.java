@@ -25,12 +25,26 @@ public class SearchCommand implements Command {
         this.parameters = parameters;
     }
 
+    public SearchCommand() {
+
+    }
+
     boolean validate() {
         boolean isValid = true;
         if (parameters.size() != 1) {
             throw new InvalidCommandParameterException();
         }
         return isValid;
+    }
+
+    @Override
+    public String getName() {
+        return "Search";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Type: search followed by the first letter/letters in first or second name";
     }
 
     public void execute() throws InvalidCommandParameterException {

@@ -2,8 +2,8 @@ package Command;
 
 public interface Command {
 
-    //void getName();
-    //void getDescription();
+    String getName();
+    String getDescription();
     void execute() throws InvalidCommandParameterException;
 
 }

@@ -18,6 +18,20 @@ public class QuitCommand implements Command {
 
     }
 
+    public QuitCommand() {
+
+    }
+
+    @Override
+    public String getName() {
+        return "quit";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Type: quit to exit application";
+    }
+
     @Override
     public void execute() throws InvalidCommandParameterException {
         registryPersister.save();
