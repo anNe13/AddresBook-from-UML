@@ -16,29 +16,16 @@ public class RemoteRegistry  {
         return remoteContacts;
     }
 
-   /* public List<Contact> search(String term) {
-        remoteContacts = new ArrayList<>();
-        List<Contact> foundList = new ArrayList<>();
+    public List <Contact> search(String term) {
+        List<Contact> foundList = new ArrayList<Contact>();
         for (Contact contact : remoteContacts) {
-
-            if (contact.getFirstName().toLowerCase().startsWith(term.toLowerCase())
-                    || contact.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
+            if (contact.getFirstName().toLowerCase().startsWith(term.toLowerCase())) {
+                foundList.add(contact);
+            } else if (contact.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
                 foundList.add(contact);
             }
         }
-        return foundList;//foundList kan vara null
-    }*/
-
-    public List <Contact> search(String term) {
-        List<Contact> tempList = new ArrayList<Contact>();
-        for (Contact contact : remoteContacts) {
-            if (contact.getFirstName().toLowerCase().startsWith(term.toLowerCase())) {
-                tempList.add(contact);
-            } else if (contact.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
-                tempList.add(contact);
-            }
-        }
-        return tempList;
+        return foundList;
     }
 
 

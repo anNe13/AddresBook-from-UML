@@ -13,21 +13,15 @@ public class SearchCommand implements Command {
     private Registry registry;
     private ConsolePrinter consolePrinter = new Console();
     private RemoteRegistry remoteRegistry;
-    String term;
     private List<String> parameters;
-
-    private RemoteRegistry remote;
 
     public SearchCommand(Registry registry, RemoteRegistry remoteRegistry, List<String> parameters) {
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;
-        this.term = parameters.get(0);
         this.parameters = parameters;
     }
 
-    public SearchCommand() {
-
-    }
+    public SearchCommand() {}
 
     boolean validate() {
         boolean isValid = true;
@@ -57,7 +51,7 @@ public class SearchCommand implements Command {
 
             searchRes.addAll(remoteRegistry.search(parameters.get(0)));
             if (searchRes.isEmpty()){
-                consolePrinter.print("empty list");}
+                consolePrinter.print("nothing like "+parameters.get(0)+" is found");}
             else{
             for (Contact c : searchRes) {
                 consolePrinter.print(new ContactFormatter().format(c));}
