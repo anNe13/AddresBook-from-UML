@@ -32,13 +32,12 @@ public class Registry  {
     }
     public List <Contact> search(String term) {
         List<Contact> tempList = null;
-        for (Contact contact : contacts){
-            if (contact.getFirstName().startsWith(term)){
+        for (Contact contact : contacts) {
+            if (contact.getFirstName().startsWith(term)) {
                 tempList.add(contact);
-            }else if (contact.getLastName().startsWith(term)){
+            } else if (contact.getLastName().startsWith(term)) {
                 tempList.add(contact);
-            }else
-                return null;
+            }
         }
         return tempList;
     }

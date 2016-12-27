@@ -1,13 +1,17 @@
 package Command;
 
+import Console.Console;
+import Console.ConsolePrinter;
 import Contact.Contact;
 import Registry.Registry;
 import RemoteReg.RemoteRegistry;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchCommand implements Command {
     private Registry registry;
+    private ConsolePrinter consolePrinter = new Console();
     private RemoteRegistry remoteRegistry;
     String term;
     private List<String> parameters;
@@ -24,7 +28,6 @@ public class SearchCommand implements Command {
     boolean validate() {
         boolean isValid = true;
         if (parameters.size() != 1) {
-            isValid = false;
             throw new InvalidCommandParameterException();
         }
         return isValid;
@@ -33,11 +36,15 @@ public class SearchCommand implements Command {
     public void execute() throws InvalidCommandParameterException {
         if (validate()) {
 
-            List<Contact> searchRes = null;
-            searchRes = registry.search(parameters.get(0));
+            List<Contact> searchRes = new ArrayList<>();
+            searchRes.addAll(registry.search(parameters.get(0)));
             searchRes.addAll(remoteRegistry.search(parameters.get(0)));
-            for (Contact c : searchRes)
-                new ContactFormatter().format(c);
+            if (searchRes.isEmpty()){
+                consolePrinter.print("empty list");}
+            else{
+            for (Contact c : searchRes) {
+                consolePrinter.print(new ContactFormatter().format(c));}
+            }
         }
     }
 

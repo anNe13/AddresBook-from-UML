@@ -25,6 +25,7 @@ public class ListCommand implements Command {
         bothLists.addAll(registry.getContacts());
         bothLists.addAll(remoteRegistry.getRemoteContacts());
 
+        bothLists = new ContactListSorter().sorter(bothLists);
         if (bothLists.isEmpty()) {
             consolePrinter.print("List is empty");
         } else {
