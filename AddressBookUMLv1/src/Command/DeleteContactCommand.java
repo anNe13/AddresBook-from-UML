@@ -33,14 +33,14 @@ public class DeleteContactCommand implements Command {
         if (validate()) {
 
             for (Contact c : registry.getContacts()) {
-                if (c.getId() == parameters.get(0)) {
+                if (c.getId().equals(parameters.get(0))) {
                     registry.deleteContact(parameters.get(0));
                     consolePrinter.print("Contact deleated");
                     return;
                 }
             }
             for (Contact c : remoteregistry.getRemoteContacts()) {
-                if (c.getId() == parameters.get(0)) {
+                if (c.getId().equals(parameters.get(0))) {
                     consolePrinter.print("You can not delete remote contats");
                     return;
                 }
