@@ -8,10 +8,6 @@ public class HelpCommand  implements Command{
     private HelpMeny helpMeny;
     private Console console;
 
-    public HelpCommand() {
-        console = new Console();
-        console.print(format());
-    }
 
     public String format() {
         helpMeny = new HelpMeny();
@@ -20,13 +16,15 @@ public class HelpCommand  implements Command{
         String temp = "";
         tempList = helpMeny.getCommands();
         for (Commands c : tempList) {
-            temp = tempList.toString().toLowerCase();
+            temp +=  c.getCommandInfo() +"\n";
+
         }
         return temp;
     }
 
     @Override
     public void execute() throws InvalidCommandParameterException {
-         new HelpCommand();
+        console = new Console();
+        console.print(format());
     }
 }

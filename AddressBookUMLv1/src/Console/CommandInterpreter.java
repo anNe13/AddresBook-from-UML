@@ -27,7 +27,7 @@ public class CommandInterpreter {
                 case "list":
                     return new ListCommand(registry, remoteregistry);
                 case "delete":
-                    return new DeleteContactCommand(registry, commandline.getParameters());
+                    return new DeleteContactCommand(registry, remoteregistry, commandline.getParameters());
                 case "search":
                     return new SearchCommand(registry, remoteregistry, commandline.getParameters());
                 case "help":
