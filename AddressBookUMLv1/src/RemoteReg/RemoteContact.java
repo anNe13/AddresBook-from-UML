@@ -9,9 +9,10 @@ public class RemoteContact extends ContactDetails implements Contact {
 
     public RemoteContact(String id, String firstName, String lastName, String email) {
         this.id = id;
-        setFirstName(firstName);
+       setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
+
     }
     public String getId() { return id;}
 }

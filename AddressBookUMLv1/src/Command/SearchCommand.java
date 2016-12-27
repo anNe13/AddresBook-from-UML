@@ -21,7 +21,7 @@ public class SearchCommand implements Command {
     public SearchCommand(Registry registry, RemoteRegistry remoteRegistry, List<String> parameters) {
         this.registry = registry;
         this.remoteRegistry = remoteRegistry;
-        this.term = term;
+        this.term = parameters.get(0);
         this.parameters = parameters;
     }
 
@@ -51,7 +51,10 @@ public class SearchCommand implements Command {
         if (validate()) {
 
             List<Contact> searchRes = new ArrayList<>();
+
             searchRes.addAll(registry.search(parameters.get(0)));
+
+
             searchRes.addAll(remoteRegistry.search(parameters.get(0)));
             if (searchRes.isEmpty()){
                 consolePrinter.print("empty list");}

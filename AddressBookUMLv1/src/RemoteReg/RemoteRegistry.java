@@ -16,7 +16,7 @@ public class RemoteRegistry  {
         return remoteContacts;
     }
 
-    public List<Contact> search(String term) {
+   /* public List<Contact> search(String term) {
         remoteContacts = new ArrayList<>();
         List<Contact> foundList = new ArrayList<>();
         for (Contact contact : remoteContacts) {
@@ -27,7 +27,22 @@ public class RemoteRegistry  {
             }
         }
         return foundList;//foundList kan vara null
+    }*/
+
+    public List <Contact> search(String term) {
+        List<Contact> tempList = new ArrayList<Contact>();
+        for (Contact contact : remoteContacts) {
+            if (contact.getFirstName().toLowerCase().startsWith(term.toLowerCase())) {
+                tempList.add(contact);
+            } else if (contact.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
+                tempList.add(contact);
+            }
+        }
+        return tempList;
     }
+
+
+
 
     public void add(String id, String firtName, String lastName, String email) {
         RemoteContact rContact = new RemoteContact(id, firtName, lastName, email);

@@ -31,11 +31,11 @@ public class Registry  {
         }
     }
     public List <Contact> search(String term) {
-        List<Contact> tempList = null;
+        List<Contact> tempList = new ArrayList<Contact>();
         for (Contact contact : contacts) {
-            if (contact.getFirstName().startsWith(term)) {
+            if (contact.getFirstName().toLowerCase().startsWith(term.toLowerCase())) {
                 tempList.add(contact);
-            } else if (contact.getLastName().startsWith(term)) {
+            } else if (contact.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
                 tempList.add(contact);
             }
         }

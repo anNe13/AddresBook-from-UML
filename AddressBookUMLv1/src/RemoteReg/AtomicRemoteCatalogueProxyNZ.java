@@ -16,7 +16,6 @@ public class AtomicRemoteCatalogueProxyNZ implements RemoteCatalogueProxy {
         this.host=host;
         this.port=port;
     }
-    public List<String> getContacts() {
-        return new CatalogueClientNZ(this).getCatalogueContacts();
-    }
+    //public List<String> getContacts() {return new CatalogueClientNZ(this).getCatalogueContacts();}
+    public List<String> getContacts() {return new CatalogueClientNZ(this).getCatalogueContacts();}
 }
