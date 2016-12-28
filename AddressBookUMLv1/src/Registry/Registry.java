@@ -29,8 +29,8 @@ public class Registry  {
                 if (contact.getId().equals(id)) {
 
                     contacts.remove(contact);
-                }//else;
-                // return;
+                    break;
+                }
             }
         } catch (Exception e) {
 
