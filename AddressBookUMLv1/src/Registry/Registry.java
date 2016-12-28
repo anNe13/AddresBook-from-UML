@@ -23,7 +23,7 @@ public class Registry  {
     }
 
     public void deleteContact(String id) {
-        try {
+
             for (Contact contact : contacts) {
 
                 if (contact.getId().equals(id)) {
@@ -32,10 +32,8 @@ public class Registry  {
                     break;
                 }
             }
-        } catch (Exception e) {
 
-        }
-        ;
+
     }
     public List <Contact> search(String term) {
         List<Contact> tempList = new ArrayList<Contact>();
