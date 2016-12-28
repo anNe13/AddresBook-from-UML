@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Registry  {
 
-    private List<Contact> contacts = new ArrayList<>();
+    public List<Contact> contacts = new ArrayList<>();
 
     public void addContact(String firstName, String lastName, String email ){
         LocalContact contact = new LocalContact(firstName, lastName, email);
@@ -22,17 +22,24 @@ public class Registry  {
        return contacts;
     }
 
-    public void deleteContact(String id){
-        for (Contact contact : contacts){
-            if (contact.getId().matches(id)){
-                contacts.remove(contact);
-            }else
-                return;
+    public void deleteContact(String id) {
+        try {
+            for (Contact contact : contacts) {
+
+                if (contact.getId().equals(id)) {
+                    System.out.println("test");
+                    contacts.remove(contact);
+                }//else;
+                // return;
+            }
+        } catch (Exception e) {
         }
+        ;
     }
     public List <Contact> search(String term) {
         List<Contact> tempList = new ArrayList<Contact>();
         for (Contact contact : contacts) {
+
             if (contact.getFirstName().toLowerCase().startsWith(term.toLowerCase())) {
                 tempList.add(contact);
             } else if (contact.getLastName().toLowerCase().startsWith(term.toLowerCase())) {
