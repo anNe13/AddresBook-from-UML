@@ -27,12 +27,13 @@ public class Registry  {
             for (Contact contact : contacts) {
 
                 if (contact.getId().equals(id)) {
-                    System.out.println("test");
+
                     contacts.remove(contact);
                 }//else;
                 // return;
             }
         } catch (Exception e) {
+
         }
         ;
     }
